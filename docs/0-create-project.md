@@ -151,3 +151,10 @@ body, input[type="text"], button
     font-family: Arial, Helvetica, sans-serif;
 }
 ```
+
+## Summary
+- You created the initial application using Create React App.
+- You learned that React components make up the view.
+- You used JSX and curly braces to display the app title.
+
+[Next Steps: The Hero Editor](1-the-hero-editor.md)
