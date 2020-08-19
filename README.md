@@ -18,7 +18,7 @@ This workshop assumes a basic understanding of JavaScript and HTML as well as fa
 1. Install a recent version of [Node.JS](https://nodejs.org).
 2. Make a new project using [Create React App](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app)
 ```
-npx create-react-app react-toh
+npx create-react-app react-tour-of-heroes
 ```
 
 ## Available Scripts
