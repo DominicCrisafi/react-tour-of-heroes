@@ -21,6 +21,10 @@ This workshop assumes a basic understanding of JavaScript and HTML as well as fa
 npx create-react-app react-tour-of-heroes
 ```
 
+## Contents
+- [Create the Project](docs/0-create-project.md)
+- [Part 1: The Hero Editor](docs/1-the-hero-editor.md)
+
 ## Available Scripts
 
 In the project directory, you can run:
