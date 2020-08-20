@@ -1,26 +1,31 @@
-import React, {useState} from "react";
+import React from "react";
+import {Route, useRouteMatch} from "react-router-dom";
 
 import {HeroDetail} from "./HeroDetail";
 import {HeroesList} from "./HeroesList"
 
 export const Heroes = (props) =>
 {
-    const [currentHero, setCurrentHero] = useState(null);
-    const handleChange = (event) =>
-    {
-        setCurrentHero({name: event.target.value, id: currentHero.id});
-    };
-    const handleClick = (hero) =>
-    {
-        setCurrentHero(hero);
-    };
+    const {path} = useRouteMatch();
+    const heroDetailMatch = useRouteMatch(`${path}/:id`);
+    const currentHero = heroDetailMatch
+        ? props.heroes
+            .find((hero) =>
+            {
+                return hero.id === parseInt(heroDetailMatch.params.id);
+            })
+        : null;
 
     return (
         <div>
-            <HeroesList heroes={props.heroes} selectedHeroId={currentHero?.id} handleClick={(hero) => handleClick(hero)}></HeroesList>
-            {currentHero &&
-                <HeroDetail hero={currentHero} handleChange={(e) => handleChange(e)}></HeroDetail>
-            }
+            <Route exact path={path}>
+                <HeroesList heroes={props.heroes}></HeroesList>
+            </Route>
+            <Route path={`${path}/:id`}>
+                {currentHero &&
+                    <HeroDetail hero={currentHero}></HeroDetail>
+                }
+            </Route>
         </div>
     );
 };

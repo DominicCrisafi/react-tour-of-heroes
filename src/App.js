@@ -1,6 +1,9 @@
 import React from "react";
+import {Link, Redirect, Route, Switch} from "react-router-dom";
 
+import {Dashboard} from "./dashboard/Dashboard";
 import {Heroes} from "./heroes/Heroes";
+import styles from "./App.module.css";
 
 const heroes =
 [
@@ -21,9 +24,23 @@ function App()
     const title = "Tour of Heroes";
 
     return (
-        <div>
+        <div className={styles.App}>
             <h1>{title}</h1>
-            <Heroes heroes={heroes}></Heroes>
+            <nav>
+                <Link to="/dashboard">Dashboard</Link>
+                <Link to="/heroes">Heroes</Link>
+            </nav>
+            <Switch>
+                <Route path="/dashboard">
+                    <Dashboard heroes={heroes}></Dashboard>
+                </Route>
+                <Route path="/heroes">
+                    <Heroes heroes={heroes}></Heroes>
+                </Route>
+                <Route path="/">
+                    <Redirect to="/dashboard"></Redirect>
+                </Route>
+            </Switch>
         </div>
     );
 }

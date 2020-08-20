@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 import styles from "./HeroesList.module.css";
 
@@ -7,8 +8,10 @@ export const HeroesList = (props) =>
     const heroes = props.heroes.map((hero) =>
     {
         return (
-            <li key={hero.id} className={props.selectedHeroId === hero.id ? styles.selected : ""} onClick={() => props.handleClick(hero)}>
-                <span className={styles.badge}>{hero.id}</span> {hero.name}
+            <li key={hero.id}>
+                <Link to={`/heroes/${hero.id}`}>
+                    <span className={styles.badge}>{hero.id}</span> {hero.name}
+                </Link>
             </li>
         );
     });
