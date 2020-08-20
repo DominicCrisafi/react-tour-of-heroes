@@ -172,6 +172,7 @@ We need to wrap `handleChange()` in an arrow function when using a class compone
 `this.state` and `this.props` may be updated asynchronously and should not be relied on when calculating the next state. When you need access to state or props, use the form of `setState()` that accepts a function instead of an object.
 
 ## Final code review
+Here are the final code files.
 
 ### `src/App.js`
 ```JSX
