@@ -1,12 +1,12 @@
-/* Heroes component private CSS styles */
-.Heroes
+/* HeroesList component private CSS styles */
+.HeroesList
 {
     margin: 0 0 2em 0;
     list-style-type: none;
     padding: 0;
     width: 15em;
 }
-.Heroes li
+.HeroesList li
 {
     cursor: pointer;
     position: relative;
@@ -17,7 +17,7 @@
     height: 1.6em;
     border-radius: 4px;
 }
-.Heroes li:hover
+.HeroesList li:hover
 {
     color: #607D8B;
     background-color: #DDD;
