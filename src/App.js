@@ -1,27 +1,28 @@
-import React from "react";
+import React, {useContext, useEffect} from "react";
 import {Link, Redirect, Route, Switch} from "react-router-dom";
 
 import {Dashboard} from "./dashboard/Dashboard";
 import {Heroes} from "./heroes/Heroes";
+import {StoreContext} from "./store/Store";
 import styles from "./App.module.css";
-
-const heroes =
-[
-    {"id": 11, "name": "Dr Nice"},
-    {"id": 12, "name": "Narco"},
-    {"id": 13, "name": "Bombasto"},
-    {"id": 14, "name": "Celeritas"},
-    {"id": 15, "name": "Magneta"},
-    {"id": 16, "name": "RubberMan"},
-    {"id": 17, "name": "Dynama"},
-    {"id": 18, "name": "Dr IQ"},
-    {"id": 19, "name": "Magma"},
-    {"id": 20, "name": "Tornado"}
-];
 
 function App()
 {
+    const [heroes, setHeroes] = useContext(StoreContext);
     const title = "Tour of Heroes";
+
+    useEffect(() =>
+    {
+        async function getHeroes()
+        {
+            const response = await fetch("heroes.json");
+            const heroList = await response.json();
+
+            setHeroes(heroList);
+        }
+
+        getHeroes();
+    }, []);
 
     return (
         <div className={styles.App}>

@@ -10,7 +10,7 @@ export const Dashboard = (props) =>
         .map((hero) =>
         {
             return (
-                <Link className={styles["col-1-4"]} to={`/heroes/${hero.id}`}>
+                <Link key={hero.id} className={styles["col-1-4"]} to={`/heroes/${hero.id}`}>
                     <div className={`${styles.module}`}>
                         <h4>{hero.name}</h4>
                     </div>

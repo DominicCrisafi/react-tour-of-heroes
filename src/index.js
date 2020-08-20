@@ -4,12 +4,15 @@ import {BrowserRouter as Router} from "react-router-dom";
 
 import "./index.css";
 import App from "./App";
+import {Store} from "./store/Store";
 
 ReactDOM.render(
     <React.StrictMode>
-        <Router>
-            <App />
-        </Router>
+        <Store>
+            <Router>
+                <App />
+            </Router>
+        </Store>
     </React.StrictMode>,
     document.getElementById("root")
 );
