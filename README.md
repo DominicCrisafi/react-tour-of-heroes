@@ -24,6 +24,10 @@ npx create-react-app react-tour-of-heroes
 ## Contents
 - [Create the Project](docs/0-create-project.md)
 - [Part 1: The Hero Editor](docs/1-the-hero-editor.md)
+- [Part 2: Display a List of Heroes](docs/2-display-hero-list.md)
+- [Part 3: Separating Features](docs/3-separating-features.md)
+- [Part 4: Add In-app Navigation](docs/4-routing.md)
+- [Part 5 - Managing Application State](docs/5-app-state.md)
 
 ## Available Scripts
 

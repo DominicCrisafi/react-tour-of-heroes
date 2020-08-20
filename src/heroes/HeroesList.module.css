@@ -23,15 +23,17 @@
     background-color: #DDD;
     left: .1em;
 }
-li.selected
+.HeroesList a
 {
-    background-color: #CFD8DC;
-    color: white;
+    color: #333;
+    text-decoration: none;
+    position: relative;
+    display: block;
+    width: 250px;
 }
-li.selected:hover
+.HeroesList a:hover
 {
-    background-color: #BBD8DC;
-    color: white;
+    color: #607D8B;
 }
 .badge
 {

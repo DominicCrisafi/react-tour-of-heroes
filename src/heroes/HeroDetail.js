@@ -1,19 +1,36 @@
-import React from "react";
+import React, {useState} from "react";
+import {useHistory} from "react-router-dom";
+
+import styles from "./HeroDetail.module.css";
 
 export const HeroDetail = (props) =>
 {
+    const [hero, setHero] = useState({...props.hero});
+    const {goBack} = useHistory();
+    const handleChange = (event) =>
+    {
+        const updatedHero =
+        {
+            ...hero,
+            name: event.target.value
+        };
+
+        setHero(updatedHero);
+    };
+
     return (
-        <div>
+        <div className={styles.HeroDetail}>
             <h2>{props.hero.name.toUpperCase()} Details</h2>
             <div>
-                <span>id: </span>{props.hero.id}
+                <span>id: </span>{hero.id}
             </div>
             <div>
                 <label>
                     name:
-                    <input value={props.hero.name} onChange={props.handleChange} placeholder="name"></input>
+                    <input value={hero.name} onChange={handleChange} placeholder="name"></input>
                 </label>
             </div>
+            <button onClick={goBack}>Go Back</button>
         </div>
     );
 }
