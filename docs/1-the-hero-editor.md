@@ -155,11 +155,11 @@ First set the `<input>`'s value to the hero's name from state
 
 Then create a `handleChange()` method and add it to the `<input>`'s `onChange` event.
 ```JSX
-handleChange(event)
+handleChange({target})
 {
     this.setState((state, props) =>
     {
-        return {hero: {name: event.target.value, id: state.hero.id}}
+        return {hero: {name: target.value, id: state.hero.id}}
     });
 }
 ```
@@ -213,11 +213,11 @@ export class Heroes extends Component
         };
     }
 
-    handleChange(event)
+    handleChange({target})
     {
         this.setState((state, props) =>
         {
-            return {hero: {name: event.target.value, id: state.hero.id}}
+            return {hero: {name: target.value, id: state.hero.id}}
         });
     }
 
