@@ -20,7 +20,7 @@ export const HeroDetail = (props) =>
 
     return (
         <div className={styles.HeroDetail}>
-            <h2>{props.hero.name.toUpperCase()} Details</h2>
+            <h2>{hero.name.toUpperCase()} Details</h2>
             <div>
                 <span>id: </span>{hero.id}
             </div>
