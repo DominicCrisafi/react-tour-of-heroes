@@ -321,11 +321,11 @@ export class Heroes extends Component
         });
     }
 
-    handleChange(event)
+    handleChange({target})
     {
         this.setState((state, props) =>
         {
-            return {hero: {name: event.target.value, id: state.hero.id}}
+            return {hero: {name: target.value, id: state.hero.id}}
         });
     }
 
