@@ -234,11 +234,9 @@ export const Heroes = (props) =>
 {
     const handleChange = ({target}) =>
     {
-        const name = target.value;
-
         setState((state, props) =>
         {
-            return {hero: {name: name, id: state.hero.id}}
+            return {hero: {name: target.value, id: state.hero.id}};
         });
     };
     const handleClick = (hero) =>
