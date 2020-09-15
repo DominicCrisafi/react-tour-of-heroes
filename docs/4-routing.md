@@ -332,6 +332,7 @@ With multiple links on the navbar now, we need to add some styles. Create an `Ap
     padding: 5px 10px;
     text-decoration: none;
     margin-top: 10px;
+    margin-left: 5px;
     display: inline-block;
     background-color: #eee;
     border-radius: 4px;
@@ -844,6 +845,7 @@ export default App;
     padding: 5px 10px;
     text-decoration: none;
     margin-top: 10px;
+    margin-left: 5px;
     display: inline-block;
     background-color: #eee;
     border-radius: 4px;
