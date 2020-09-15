@@ -181,20 +181,7 @@ const heroes = props.heroes.map((hero) =>
 Now we need to `import` and display the new `HeroDetail` and `HeroesList` components in place of the view that we removed.
 
 ### HeroDetail component
-`import` the `HeroDetail` component in the `Hero` component and add a `<HeroDetail>` tag where the details used to be. Pass the current hero from the state to the `hero` prop and `(e) => this.handleChange(e)` to the `handleChange` prop. Make the following updates to the `handleChange()` method:
-```JSX
-handleChange(event)
-{
-    const name = event.target.value;
-
-    this.setState((state, props) =>
-    {
-        return {hero: {name: name, id: state.hero.id}}
-    });
-}
-```
-
-The updated `Heroes` component view should now look like this:
+`import` the `HeroDetail` component in the `Hero` component and add a `<HeroDetail>` tag where the details used to be. Pass the current hero from the state to the `hero` prop and `(e) => this.handleChange(e)` to the `handleChange` prop. The updated `Heroes` component view should now look like this:
 ```JSX
 render()
 {
@@ -312,9 +299,9 @@ export const Heroes = (props) =>
 
 Now that we have a function to set state again, we will update the event handlers. Update the handlers to the following:
 ```JSX
-const handleChange = (event) =>
+const handleChange = ({target}) =>
 {
-    setCurrentHero({name: event.target.value, id: currentHero.id});
+    setCurrentHero({name: target.value, id: currentHero.id});
 };
 const handleClick = (hero) =>
 {
@@ -350,9 +337,9 @@ import {HeroesList} from "./HeroesList"
 export const Heroes = (props) =>
 {
     const [currentHero, setCurrentHero] = useState(null);
-    const handleChange = (event) =>
+    const handleChange = ({target}) =>
     {
-        setCurrentHero({name: event.target.value, id: currentHero.id});
+        setCurrentHero({name: target.value, id: currentHero.id});
     };
     const handleClick = (hero) =>
     {
