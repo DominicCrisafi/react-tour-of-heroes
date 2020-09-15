@@ -647,12 +647,12 @@ import React, {useState} from "react";
 export const HeroDetail = (props) =>
 {
     const [hero, setHero] = useState({...props.hero});
-    const handleChange = (event) =>
+    const handleChange = ({target}) =>
     {
         const updatedHero =
         {
             ...hero,
-            name: event.target.value
+            name: target.value
         };
 
         setHero(updatedHero);
@@ -688,12 +688,12 @@ export const HeroDetail = (props) =>
 {
     const [hero, setHero] = useState({...props.hero});
     const {goBack} = useHistory();
-    const handleChange = (event) =>
+    const handleChange = ({target}) =>
     {
         const updatedHero =
         {
             ...hero,
-            name: event.target.value
+            name: target.value
         };
 
         setHero(updatedHero);
@@ -1001,12 +1001,12 @@ export const HeroDetail = (props) =>
 {
     const [hero, setHero] = useState({...props.hero});
     const {goBack} = useHistory();
-    const handleChange = (event) =>
+    const handleChange = ({target}) =>
     {
         const updatedHero =
         {
             ...hero,
-            name: event.target.value
+            name: target.value
         };
 
         setHero(updatedHero);
