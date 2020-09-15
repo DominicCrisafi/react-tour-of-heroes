@@ -259,7 +259,6 @@ The list currently doesn't indicate which hero is selected. Let's add some style
 ```
 
 ## Final code review
-Here are the final code files.
 
 ### `src/App.js`
 ```JSX
@@ -322,11 +321,11 @@ export class Heroes extends Component
         });
     }
 
-    handleChange(event)
+    handleChange({target})
     {
         this.setState((state, props) =>
         {
-            return {hero: {name: event.target.value, id: state.hero.id}}
+            return {hero: {name: target.value, id: state.hero.id}}
         });
     }
 
@@ -421,7 +420,7 @@ li.selected:hover
 
 ## Summary
 - You learned how to create and display a list of heroes.
-- You added a CSS module to the `Heroes` component.
+- You adde a CSS module to the `Heroes` component.
 - You learned how to update the details when a user selects a hero.
 - You learned how to conditionally render the hero details.
 
