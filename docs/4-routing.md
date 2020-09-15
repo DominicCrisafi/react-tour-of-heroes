@@ -332,6 +332,7 @@ With multiple links on the navbar now, we need to add some styles. Create an `Ap
     padding: 5px 10px;
     text-decoration: none;
     margin-top: 10px;
+    margin-left: 5px;
     display: inline-block;
     background-color: #eee;
     border-radius: 4px;
@@ -646,12 +647,12 @@ import React, {useState} from "react";
 export const HeroDetail = (props) =>
 {
     const [hero, setHero] = useState({...props.hero});
-    const handleChange = (event) =>
+    const handleChange = ({target}) =>
     {
         const updatedHero =
         {
             ...hero,
-            name: event.target.value
+            name: target.value
         };
 
         setHero(updatedHero);
@@ -659,7 +660,7 @@ export const HeroDetail = (props) =>
 
     return (
         <div>
-            <h2>{props.hero.name.toUpperCase()} Details</h2>
+            <h2>{hero.name.toUpperCase()} Details</h2>
             <div>
                 <span>id: </span>{hero.id}
             </div>
@@ -687,12 +688,12 @@ export const HeroDetail = (props) =>
 {
     const [hero, setHero] = useState({...props.hero});
     const {goBack} = useHistory();
-    const handleChange = (event) =>
+    const handleChange = ({target}) =>
     {
         const updatedHero =
         {
             ...hero,
-            name: event.target.value
+            name: target.value
         };
 
         setHero(updatedHero);
@@ -700,7 +701,7 @@ export const HeroDetail = (props) =>
 
     return (
         <div>
-            <h2>{props.hero.name.toUpperCase()} Details</h2>
+            <h2>{hero.name.toUpperCase()} Details</h2>
             <div>
                 <span>id: </span>{hero.id}
             </div>
@@ -844,6 +845,7 @@ export default App;
     padding: 5px 10px;
     text-decoration: none;
     margin-top: 10px;
+    margin-left: 5px;
     display: inline-block;
     background-color: #eee;
     border-radius: 4px;
@@ -999,12 +1001,12 @@ export const HeroDetail = (props) =>
 {
     const [hero, setHero] = useState({...props.hero});
     const {goBack} = useHistory();
-    const handleChange = (event) =>
+    const handleChange = ({target}) =>
     {
         const updatedHero =
         {
             ...hero,
-            name: event.target.value
+            name: target.value
         };
 
         setHero(updatedHero);
@@ -1012,7 +1014,7 @@ export const HeroDetail = (props) =>
 
     return (
         <div className={styles.HeroDetail}>
-            <h2>{props.hero.name.toUpperCase()} Details</h2>
+            <h2>{hero.name.toUpperCase()} Details</h2>
             <div>
                 <span>id: </span>{hero.id}
             </div>

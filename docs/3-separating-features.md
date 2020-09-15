@@ -232,13 +232,11 @@ Next, move the `handleChange()` and `handleClick` into the body of `Heroes`.
 ```JSX
 export const Heroes = (props) =>
 {
-    const handleChange = (event) =>
+    const handleChange = ({target}) =>
     {
-        const name = event.target.value;
-
         setState((state, props) =>
         {
-            return {hero: {name: name, id: state.hero.id}}
+            return {hero: {name: target.value, id: state.hero.id}};
         });
     };
     const handleClick = (hero) =>
@@ -271,13 +269,11 @@ import {HeroesList} from "./HeroesList"
 export const Heroes = (props) =>
 {
     const [currentHero, setCurrentHero] = useState(null);
-    const handleChange = (event) =>
+    const handleChange = ({target}) =>
     {
-        const name = event.target.value;
-
         setState((state, props) =>
         {
-            return {hero: {name: name, id: state.hero.id}}
+            return {hero: {name: target.value, id: state.hero.id}}
         });
     };
     const handleClick = (hero) =>
