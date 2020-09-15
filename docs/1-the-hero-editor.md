@@ -155,11 +155,11 @@ First set the `<input>`'s value to the hero's name from state
 
 Then create a `handleChange()` method and add it to the `<input>`'s `onChange` event.
 ```JSX
-handleChange(event)
+handleChange({target})
 {
     this.setState((state, props) =>
     {
-        return {hero: {name: event.target.value, id: state.hero.id}}
+        return {hero: {name: target.value, id: state.hero.id}}
     });
 }
 ```
@@ -172,7 +172,6 @@ We need to wrap `handleChange()` in an arrow function when using a class compone
 `this.state` and `this.props` may be updated asynchronously and should not be relied on when calculating the next state. When you need access to state or props, use the form of `setState()` that accepts a function instead of an object.
 
 ## Final code review
-Here are the final code files.
 
 ### `src/App.js`
 ```JSX
@@ -214,11 +213,11 @@ export class Heroes extends Component
         };
     }
 
-    handleChange(event)
+    handleChange({target})
     {
         this.setState((state, props) =>
         {
-            return {hero: {name: event.target.value, id: state.hero.id}}
+            return {hero: {name: target.value, id: state.hero.id}}
         });
     }
 
