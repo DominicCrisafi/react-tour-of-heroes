@@ -6,9 +6,9 @@ import {HeroesList} from "./HeroesList"
 export const Heroes = (props) =>
 {
     const [currentHero, setCurrentHero] = useState(null);
-    const handleChange = (event) =>
+    const handleChange = ({target}) =>
     {
-        setCurrentHero({name: event.target.value, id: currentHero.id});
+        setCurrentHero({name: target.value, id: currentHero.id});
     };
     const handleClick = (hero) =>
     {
